@@ -23,7 +23,8 @@ jobs:
       - name: Install Maven 3.8.10
         run: |
           MAVEN_VERSION="3.8.10"
-          curl -sLO "https://downloads.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.zip"
+          # curl -sLO "https://downloads.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.zip"
+          wget https://dlcdn.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.zip -O apache-maven-${MAVEN_VERSION}-bin.zip
           unzip -q "apache-maven-${MAVEN_VERSION}-bin.zip" -d "$HOME"
           echo "$HOME/apache-maven-${MAVEN_VERSION}/bin" >> $GITHUB_PATH
 
