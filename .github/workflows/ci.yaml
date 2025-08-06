@@ -6,7 +6,7 @@ on:
 
 jobs:
   sonar-scan:
-    runs-on: ubuntu-latest
+    runs-on: arc-runner-set 
 
     steps:
       - name: Checkout source code
@@ -27,7 +27,7 @@ jobs:
           unzip -q "apache-maven-${MAVEN_VERSION}-bin.zip" -d "$HOME"
           echo "$HOME/apache-maven-${MAVEN_VERSION}/bin" >> $GITHUB_PATH
 
-      - name: Run SonarQube analysis (no tests)
+      - name: Run SonarQube analysis
         run: |
           mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
             -Dsonar.projectKey=YOUR_PROJECT_KEY \
