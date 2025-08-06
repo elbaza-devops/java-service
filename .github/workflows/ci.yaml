@@ -31,7 +31,7 @@ jobs:
       - name: Run SonarQube analysis
         run: |
           mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-            -Dsonar.projectKey=YOUR_PROJECT_KEY \
+            -Dsonar.projectKey=java-service \
             -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
             -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
             --no-transfer-progress -B
